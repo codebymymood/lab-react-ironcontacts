@@ -63,21 +63,17 @@ import { useState } from 'react'
            <ul>
             {allContacts.map((elem) => {
                       return (
-                        <li key={elem.id}>
-                            Picture: <img src={elem.pictureUrl} alt=""/><br/>
+                        <div className='list' key={elem.id}>
+                            <img src={elem.pictureUrl} alt=""/><br/>
                             Name: {elem.name}<br/>
                             Popularity: {elem.popularity.toFixed(2)}<br/>
                             Won Oscar: {elem.wonOscar === true && '🏆'}<br/>
                             Won Emmy: {elem.wonEmmy === true && '🏆'}<br/>
                             <button onClick={() => { handleDelete(elem.id) }}>Delete</button>
-                        </li>
-
+                        </div>                       
                       )  
-
                 })
             }
-
-
            </ul>
         </div>
     )
